@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'alekseytyan'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -14,18 +14,6 @@ repositories {
 
 ext {
     set('springBootAdminVersion', "2.3.1")
-}
-
-jar {
-    enabled = true
-
-    manifest {
-        attributes "Main-Class": "alekseytyan.springmysql.Main"
-    }
-
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    }
 }
 
 dependencies {
