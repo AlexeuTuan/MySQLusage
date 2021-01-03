@@ -165,7 +165,7 @@ ext {
             validation     : "javax.validation:validation-api:$javaxValidationVersion",
             aspectjweaver  : "org.aspectj:aspectjweaver:$aspectjVersion",
             aspectjrt      : "org.aspectj:aspectjrt:$aspectjVersion",
-            lang3          : "org.apache.commons:commons-lang3:3.5",
+            lang3          : "org.apache.commons:commons-lang3:3.9",
             guava          : "com.google.guava:guava:$guavaVersion",
             joda           : "joda-time:joda-time:$jodaVersion",
             usertype       : "org.jadira.usertype:usertype.core:$utVersion",

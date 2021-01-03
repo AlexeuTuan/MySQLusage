@@ -1,12 +1,12 @@
 package alekseytyan.dao;
 
 import alekseytyan.entities.Singer;
-import org.apache.commons.lang3.NotImplementedException;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.apache.commons.lang3.*;
 
 import java.util.List;
 
@@ -20,7 +20,8 @@ public class JdbcSingerDao implements SingerDao, InitializingBean {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @Override public String findNameById(Long id) {
+    @Override
+    public String findNameById(Long id) {
         return jdbcTemplate.queryForObject(
                 "SELECT first_name || ' ' || last_name FROM singer WHERE id = ?",
                 new Object[]{id}, String.class);
