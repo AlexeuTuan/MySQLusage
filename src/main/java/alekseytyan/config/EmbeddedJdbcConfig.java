@@ -30,7 +30,8 @@ public class EmbeddedJdbcConfig {
         }
     }
 
-    @Bean public JdbcTemplate jdbcTemplate(){
+    @Bean
+    public JdbcTemplate jdbcTemplate() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource());
         return jdbcTemplate;
