@@ -5,19 +5,29 @@ import alekseytyan.entities.Singer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.sql.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-public class PlainJdbcDemo {
+@SpringBootApplication
+public class Main {
+
+    private static SingerDao singerDao;
 
     @Autowired
-    private static SingerDao singerDao;
-    private static Logger logger = LoggerFactory.getLogger(PlainJdbcDemo.class);
+    public static void setSingerDao(SingerDao singerDao) {
+        Main.singerDao = singerDao;
+    }
+
+    private static Logger logger = LoggerFactory.getLogger(Main.class);
 
 
     public static void main(String... args) {
+
+        SpringApplication.run(Main.class, args);
         logger.info("Listing initial singer data:");
 
         listAllSingers();

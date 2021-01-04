@@ -25,8 +25,7 @@ import java.sql.Driver;
  * Created by iuliana.cosmina on 4/15/17.
  */
 @Configuration
-@PropertySource("classpath:db/jdbc.properties")
-@ComponentScan("alekseytyan")
+@PropertySource("classpath:application.properties")
 public class PopulatorJdbcConfig {
 
 	private static Logger logger = LoggerFactory.getLogger(PopulatorJdbcConfig.class);

@@ -1,6 +1,5 @@
 package alekseytyan.springmysql;
 
-import alekseytyan.config.EmbeddedJdbcConfig;
 import alekseytyan.config.PopulatorJdbcConfig;
 import alekseytyan.dao.SingerDao;
 import org.junit.jupiter.api.Test;
@@ -27,13 +26,6 @@ public class JdbcCfgTest {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
         ctx.load("classpath:spring/embedded-derby-cfg.xml");
         ctx.refresh();
-        testDao(ctx.getBean(SingerDao.class));
-        ctx.close();
-    }
-
-    @Test
-    public void testEmbeddedJavaConfig() {
-        GenericApplicationContext ctx = new AnnotationConfigApplicationContext(EmbeddedJdbcConfig.class);
         testDao(ctx.getBean(SingerDao.class));
         ctx.close();
     }
