@@ -35,39 +35,48 @@ public class JdbcSingerDao implements SingerDao, InitializingBean {
     }
 
     // Unimplemented methods, add implementations and tests as practice
-    @Override public List<Singer> findAll() {
+    @Override
+    public List<Singer> findAll() {
         throw new NotImplementedException("findAll");
     }
 
-    @Override public List<Singer> findByFirstName(String firstName) {
+    @Override
+    public List<Singer> findByFirstName(String firstName) {
         throw new NotImplementedException("findByFirstName");
     }
 
-    @Override public String findLastNameById(Long id) {
+    @Override
+    public String findLastNameById(Long id) {
         throw new NotImplementedException("findLastNameById");
     }
 
-    @Override public void insert(Singer singer) {
+    @Override
+    public void insert(Singer singer) {
         throw new NotImplementedException("insert");
     }
 
-    @Override public void update(Singer singer) {
+    @Override
+    public void update(Singer singer) {
         throw new NotImplementedException("update");
     }
 
-    @Override public void delete(Long singerId) {
+    @Override
+    public void delete(Long singerId) {
         throw new NotImplementedException("delete");
     }
 
-    @Override public List<Singer> findAllWithAlbums() {
+    @Override
+    public List<Singer> findAllWithAlbums() {
         throw new NotImplementedException("findAllWithAlbums");
     }
 
-    @Override public void insertWithAlbum(Singer singer) {
+    @Override
+    public void insertWithAlbum(Singer singer) {
         throw new NotImplementedException("insertWithAlbum");
     }
 
-    @Override public void afterPropertiesSet() throws Exception {
+    @Override
+    public void afterPropertiesSet() throws Exception {
         if (jdbcTemplate == null) {
             throw new BeanCreationException("Null JdbcTemplate on SingerDao");
         }
