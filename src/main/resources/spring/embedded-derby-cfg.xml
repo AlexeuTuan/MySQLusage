@@ -17,6 +17,6 @@
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
           p:dataSource-ref="dataSource" />
 
-    <bean id="singerDao" class="com.apress.prospring5.ch6.JdbcSingerDao"
+    <bean id="singerDao" class="alekseytyan.dao.JdbcSingerDao"
           p:jdbcTemplate-ref="jdbcTemplate"/>
 </beans>
