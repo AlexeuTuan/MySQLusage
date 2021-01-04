@@ -1,4 +1,4 @@
-package alekseytyan;
+package alekseytyan.dao;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DeadlockLoserDataAccessException;

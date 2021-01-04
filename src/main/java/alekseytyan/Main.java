@@ -1,5 +1,6 @@
 package alekseytyan;
 
+import alekseytyan.dao.PlainSingerDao;
 import alekseytyan.dao.SingerDao;
 import alekseytyan.entities.Singer;
 import org.slf4j.Logger;
@@ -12,15 +13,9 @@ import java.sql.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-@SpringBootApplication
 public class Main {
 
-    private static SingerDao singerDao;
-
-    @Autowired
-    public static void setSingerDao(SingerDao singerDao) {
-        Main.singerDao = singerDao;
-    }
+    private static SingerDao singerDao = new PlainSingerDao();
 
     private static Logger logger = LoggerFactory.getLogger(Main.class);
 

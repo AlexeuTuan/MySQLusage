@@ -1,6 +1,6 @@
 package alekseytyan.config;
 
-import alekseytyan.CleanUp;
+import alekseytyan.dao.CleanUp;
 import alekseytyan.dao.JdbcSingerDao;
 import alekseytyan.dao.SingerDao;
 import org.slf4j.Logger;

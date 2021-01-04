@@ -19,8 +19,8 @@
           p:dataSource-ref="dataSource" />
 
     <bean id="singerDao" class="alekseytyan.dao.JdbcSingerDao"
-          p:jdbcTemplate-ref="jdbcTemplate" />
+          p:jdbcTemplate-ref="jdbcTemplate"/>
 
-    <bean class="alekseytyan.CleanUp" c:jdbcTemplate-ref="jdbcTemplate"
+    <bean class="alekseytyan.dao.CleanUp" c:jdbcTemplate-ref="jdbcTemplate"
           destroy-method="destroy"/>
 </beans>

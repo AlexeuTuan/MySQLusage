@@ -1,7 +1,5 @@
 package alekseytyan.dao;
 
-import alekseytyan.MySQLErrorCodesTranslator;
-import alekseytyan.dao.SingerDao;
 import alekseytyan.entities.Singer;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.InitializingBean;
@@ -10,26 +8,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.apache.commons.lang3.*;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 @Component
 public class JdbcSingerDao implements SingerDao, InitializingBean {
 
     private JdbcTemplate jdbcTemplate;
-
-    private DataSource dataSource;
-
-    @Autowired
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        jdbcTemplate.setDataSource(dataSource);
-        MySQLErrorCodesTranslator errorTranslator = new MySQLErrorCodesTranslator();
-        errorTranslator.setDataSource(dataSource);
-        jdbcTemplate.setExceptionTranslator(errorTranslator);
-        this.jdbcTemplate = jdbcTemplate;
-    }
 
     @Autowired
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
