@@ -15,15 +15,14 @@ import java.util.List;
 @Component
 public class JdbcSingerDao implements SingerDao, InitializingBean {
 
-    private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
+    private DataSource dataSource;
 
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource);
-        MySQLErrorCodesTranslator errorTranslator =
-                new MySQLErrorCodesTranslator();
+        MySQLErrorCodesTranslator errorTranslator = new MySQLErrorCodesTranslator();
         errorTranslator.setDataSource(dataSource);
         jdbcTemplate.setExceptionTranslator(errorTranslator);
         this.jdbcTemplate = jdbcTemplate;

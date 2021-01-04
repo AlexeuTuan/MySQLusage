@@ -1,18 +1,21 @@
 package alekseytyan;
 
-import alekseytyan.dao.PlainSingerDao;
 import alekseytyan.dao.SingerDao;
 import alekseytyan.entities.Singer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 public class PlainJdbcDemo {
-    private static SingerDao singerDao = new PlainSingerDao();
+
+    @Autowired
+    private static SingerDao singerDao;
     private static Logger logger = LoggerFactory.getLogger(PlainJdbcDemo.class);
+
 
     public static void main(String... args) {
         logger.info("Listing initial singer data:");
